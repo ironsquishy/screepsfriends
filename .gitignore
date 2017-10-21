@@ -4,6 +4,7 @@
 # Ignore basic folders
 /dist
 /node_modules
+/package-lock.json
 
 # Screeps config file
 /config.json
