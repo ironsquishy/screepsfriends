@@ -6,6 +6,9 @@
     "forin": false,
     "interface-name": [false],
     "no-console": [false],
+    "one-line": false,
+    "whitespace": false,
+    "no-empty": false,
     "trailing-comma": [
       true,
       "never"
