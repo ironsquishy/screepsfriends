@@ -1,13 +1,16 @@
 
-
+import GameStack from "./game.stack";
 export default class GameBuilder {
 
   private newHarvOpt: Object;
   private newUpgradeOpt: Object;
   private newBuilderOpt: Object;
+  private gameStack: GameStack;
+
   constructor(){
-    this.newBuilderOpt = { memory: {role: "harvester"}};
-    this.newHarvOpt = {memory: {role: "builder"}};
+    this.gameStack = new GameStack();
+    this.newBuilderOpt = { memory: {role: "builder"}};
+    this.newHarvOpt = {memory: {role: "harvester"}};
     this.newUpgradeOpt = {memory: {role: "upgrader"}};
   }
 
@@ -41,12 +44,14 @@ export default class GameBuilder {
 
       if(remainingTime == 1){
         console.log("Registering creep: ", spawningCreep.name);
-        //Add to stack
+        this.gameStack.addToStack(spawningCreep);
       }
 
     }
 
   }
+
+
 
   public destroy(creep: Creep) : boolean{
     console.log("Destroy: ", creep.name);

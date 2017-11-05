@@ -39,22 +39,41 @@ export default class GameStack{
     }
   }
 
-  public addHarvester(name: string): void {
-    Memory.harvesters.push(name);
-    console.log("Harvester count: ", Memory.harvester.length);
+  public addToStack(crp: Creep): void{
+
+    if(crp.memory.role == "harvester"){
+      this.addHarvester(crp.name);
+    }
+
+    if(crp.memory.role == "builder"){
+      this.addBuilder(crp.name);
+    }
+
+    if(crp.memory.role == "upgrader"){
+      this.addUpgrader(crp.name);
+    }
+
+    if(crp.memory.role == "explorer"){
+      this.addExplorer(crp.name);
+    }
   }
 
-  public addBuilder(name: string): void {
+  private addHarvester(name: string): void {
+    Memory.harvesters.push(name);
+    console.log("Harvester count: ", Memory.harvesters.length);
+  }
+
+  private addBuilder(name: string): void {
     Memory.builders.push(name);
     console.log("Builder count: ", Memory.builders.length);
   }
 
-  public addUpgrader(name: string): void {
+  private addUpgrader(name: string): void {
     Memory.upgraders.push(name);
-    console.log("Upgrader count: ", Memory.ugraders.length);
+    console.log("Upgrader count: ", Memory.upgraders.length);
   }
 
-  public addExplorer(name: string): void {
+  private addExplorer(name: string): void {
     Memory.explorer.push(name);
     console.log("Explorer count: ", Memory.explorer.length);
   }

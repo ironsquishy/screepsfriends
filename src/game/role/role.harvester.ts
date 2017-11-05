@@ -30,8 +30,9 @@ import {R} from "./role";
         let targets: Structure[] = creep.room.find<Structure>(FIND_STRUCTURES, this.findOpt);
 
         if(targets.length > 0 ){
-          if (creep.transfer(targets[0], RESOURCE_ENERGY) == ERR_NOT_IN_RANGE){
+          //Check if all Structures are full of energy...
 
+          if (creep.transfer(targets[0], RESOURCE_ENERGY) == ERR_NOT_IN_RANGE){
             creep.moveTo(targets[0], this.moveOpt);
           }
         }

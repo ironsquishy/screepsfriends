@@ -15,20 +15,6 @@ class GameManager {
     return this.instance;
   }
 
-  public register(creep: Creep): void{
-    if(creep.memory.role == "harvester"){
-      this.gamestack.addHarvester(creep.name);
-    }
-
-    if(creep.memory.role == "builder"){
-      this.gamestack.addBuilder(creep.name);
-    }
-
-    if(creep.memory.role == "upgrader"){
-      this.gamestack.addUpgrader(creep.name);
-    }
-  }
-
   public deRegister(creep: Creep): void{
     console.log("Deregistering: ", creep.name);
 
@@ -39,7 +25,8 @@ class GameManager {
   }
 
   public run(): void{
-    console.log("Running game from game manager");
+    this.gamestack.run();
+    this.builder.constructCreeps();
 
   }
 }

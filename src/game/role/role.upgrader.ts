@@ -38,7 +38,7 @@ import {R} from "./role";
 
         if (creep.harvest(sources[0]) == ERR_NOT_IN_RANGE){
           this.moveOpt.visualizePathStyle.stroke = "#ffaa00";
-          creep.moveTo(creep.room.controller, this.moveOpt);
+          creep.moveTo(sources[0], this.moveOpt);
         }
       }
     }
