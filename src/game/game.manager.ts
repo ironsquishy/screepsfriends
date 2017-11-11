@@ -29,6 +29,7 @@ class GameManager {
     this.builder.constructCreeps();
 
   }
+
 }
 
 export const gameManager = new GameManager();
