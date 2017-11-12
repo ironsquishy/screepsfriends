@@ -7,6 +7,7 @@ Memory.explorers = Memory.explorers || [];
 Memory.maxHarvCount  = 3;
 Memory.maxBuildCount = 2;
 Memory.maxUpgradeCount = 2;
+Memory.maxExplorerCount = 1;
 
 import {gameManager} from "./game/game.manager";
 
